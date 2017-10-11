@@ -16,8 +16,8 @@ function greet (){
     return rgreet;
 }
 
-app.get ('/rgreet/:id', function(req, res){
-    res.send(greet() + " " + req.params.id);
+app.get ('/greet/:navn', function(req, res){
+    res.send(greet() + " " + req.params.navn);
 })
 
 app.listen(app.get("port"), function () {
