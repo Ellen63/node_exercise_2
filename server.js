@@ -2,7 +2,12 @@ const express = require('express')
 const app = express()
 
 app.use(express.static('public'))
-app.set('port', (process.envPORT || 8080));
+app.set('port', (process.env.PORT || 8080));
+
+app.get('/', function(req, res) {
+  let staticApp = readTextFile("public/index.html");
+  res.send(staticApp);
+});
 
 function greet (){
     
